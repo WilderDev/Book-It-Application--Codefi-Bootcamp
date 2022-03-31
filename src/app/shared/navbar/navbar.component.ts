@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  @Output() currPage = new EventEmitter();
   show = false;
   collapsed = true;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onNavItemClick(page: string) {
+    this.currPage.emit(page);
+  }
 }
