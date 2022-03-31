@@ -6,6 +6,9 @@
 
 [Angular Lesson 1: Basics - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-1---basics---Final)
 
+[Angular Lesson 1: Components & Databinding - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-2---components-%26-databinding---Final)
+
+
 ---
 
 ## Class Outlines
@@ -21,4 +24,16 @@
 - Adding simple styles to our project
 - Common Bootstrap classes
 
+
+
 ---
+
+
+### Angular 2: Components & Databinding Deep dive
+
+- Event-binding
+- Property-binding
+- Sending data from component to component. (Parent to child and child to parent)
+- Writing functions
+- Taking in data using `@Input()` and outputting data using `@Output()`
+- Conditionally displaying data based on a variable's state
