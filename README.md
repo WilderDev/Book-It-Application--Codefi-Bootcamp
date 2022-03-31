@@ -6,7 +6,7 @@
 
 [Angular Lesson 1: Basics - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-1---basics---Final)
 
-[Angular Lesson 1: Components & Databinding - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-2---components-%26-databinding---Final)
+[Angular Lesson 2: Components & Databinding - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-2---components-%26-databinding---Final)
 
 
 ---
