@@ -8,6 +8,7 @@
 
 [Angular Lesson 2: Components & Databinding - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-2---components-%26-databinding---Final)
 
+[Angular Lesson 3: Directives & Services - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-3---directives-%26-services---final)
 
 ---
 
@@ -37,3 +38,17 @@
 - Writing functions
 - Taking in data using `@Input()` and outputting data using `@Output()`
 - Conditionally displaying data based on a variable's state
+
+---
+
+
+### Angular 3: Directives & Services
+
+- The difference between attribute & structural directives
+- How to implement fundamental attributes & structural directives
+- How to use the Renderer2 Package
+- How to react to user events in custom directives
+- How to build custom directives
+- How to set up Angular Services
+- How to use Services for cross-component communication
+- How to "Inject" Services into other Services
