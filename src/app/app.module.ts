@@ -10,6 +10,7 @@ import { BookResultsComponent } from './library/book-results/book-results.compon
 import { BookSearchComponent } from './library/book-search/book-search.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BookComponent } from './shared/book/book.component';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BookComponent } from './shared/book/book.component';
     BookSearchComponent,
     NavbarComponent,
     BookComponent,
+    DropdownDirective,
   ],
   imports: [BrowserModule],
   providers: [],
