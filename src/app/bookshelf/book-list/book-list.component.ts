@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from '../../shared/book/book.model';
+import { BookshelfService } from '../bookshelf.service';
 
 @Component({
   selector: 'app-book-list',
@@ -7,34 +8,21 @@ import { Book } from '../../shared/book/book.model';
   styleUrls: ['./book-list.component.css'],
 })
 export class BookListComponent implements OnInit {
-  @Output() currBook = new EventEmitter<Book>();
+  bookshelfBooks: Book[] = [];
 
-  myBookshelfBooks: Book[] = [
-    new Book(
-      'The Pragmatic Programmer',
-      'Andrew Hunt',
-      'Non-Fiction',
-      'https://images-na.ssl-images-amazon.com/images/I/41HXiIojloL._SX396_BO1,204,203,200_.jpg'
-    ),
-    new Book(
-      'Code Complete v2',
-      'Steve McConnell',
-      'Non-Fiction',
-      'https://images-na.ssl-images-amazon.com/images/I/41nvEPEagML._SX408_BO1,204,203,200_.jpg'
-    ),
-    new Book(
-      'Eloquent JavaScript v3',
-      'Marjin Haverbeke',
-      'Non-Fiction',
-      'https://eloquentjavascript.net/img/cover.jpg'
-    ),
-  ];
+  constructor(private bookshelfService: BookshelfService) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    // 1. Set the local "bookshelfBooks" array with the global "myBookshelfBooks" array via the "getBookshelfBooks" method
+    this.bookshelfBooks = this.bookshelfService.getBookshelfBooks();
 
-  ngOnInit(): void {}
+    // 2. Listening for any changes to the "myBookshelfBooks" array and updated our local "bookshelfBooks" array when that occurs
+    this.bookshelfService.bookshelfBooksChanged.subscribe((updatedBooks) => {
+      this.bookshelfBooks = updatedBooks;
+    });
+  }
 
-  handleBookSelect(book: Book) {
-    this.currBook.emit(book);
+  onRemoveBook(idx: number) {
+    this.bookshelfService.deleteBookFromBookshelf(idx);
   }
 }
