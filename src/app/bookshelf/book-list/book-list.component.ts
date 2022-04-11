@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../../shared/book/book.model';
 import { BookshelfService } from '../bookshelf.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -10,7 +11,11 @@ import { BookshelfService } from '../bookshelf.service';
 export class BookListComponent implements OnInit {
   bookshelfBooks: Book[] = [];
 
-  constructor(private bookshelfService: BookshelfService) {}
+  constructor(
+    private bookshelfService: BookshelfService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     // 1. Set the local "bookshelfBooks" array with the global "myBookshelfBooks" array via the "getBookshelfBooks" method
@@ -24,5 +29,9 @@ export class BookListComponent implements OnInit {
 
   onRemoveBook(idx: number) {
     this.bookshelfService.deleteBookFromBookshelf(idx);
+  }
+
+  onAddNewBook() {
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 }

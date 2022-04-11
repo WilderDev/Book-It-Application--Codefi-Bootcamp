@@ -48,8 +48,15 @@
         Edit Book
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" style="cursor: pointer">Update Book</a>
-        <a class="dropdown-item" style="cursor: pointer">Delete Book</a>
+        <a class="dropdown-item" style="cursor: pointer" (click)="onEditBook()"
+          >Update Book</a
+        >
+        <a
+          class="dropdown-item"
+          style="cursor: pointer"
+          (click)="onDeleteBook()"
+          >Delete Book</a
+        >
       </div>
     </div>
   </div>
