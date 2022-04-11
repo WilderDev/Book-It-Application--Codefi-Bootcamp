@@ -35,9 +35,14 @@ export class BookshelfService {
     this.bookshelfBooksChanged.emit(this.myBookshelfBooks.slice());
   }
 
-  // Read
+  // Read All
   getBookshelfBooks() {
     return this.myBookshelfBooks.slice();
+  }
+
+  // Read One
+  getBookshelfBook(idx: number) {
+    return this.myBookshelfBooks.slice()[idx];
   }
 
   // Delete

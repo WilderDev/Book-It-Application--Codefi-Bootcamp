@@ -1,7 +1,8 @@
 <a
-  (click)="onSelectBook()"
   style="cursor: pointer"
   class="list-group-item clearfix"
+  [routerLink]="[bookIdx]"
+  routerLinkActive="active"
 >
   <div class="float-left">
     <h4 class="list-group-item-heading">{{ book.title }}</h4>
