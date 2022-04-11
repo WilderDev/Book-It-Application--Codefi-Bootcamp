@@ -10,6 +10,8 @@
 
 [Angular Lesson 3: Directives & Services - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-3---directives-%26-services---final)
 
+[Angular Lesson 4: Routing - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-4---routing---final)
+
 ---
 
 ## Class Outlines
@@ -52,3 +54,13 @@
 - How to set up Angular Services
 - How to use Services for cross-component communication
 - How to "Inject" Services into other Services
+
+---
+
+### Angular 4: Routing
+
+- How to add base routes for our application
+- How to add child routes
+- How to configure route parameters
+- How to pass dynamic parameters through links
+- How to programmatically edit our book links
