@@ -12,6 +12,9 @@
 
 [Angular Lesson 4: Routing - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-4---routing---final)
 
+[Angular Lesson 5: Observables - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-5---observables---final)
+
+
 ---
 
 ## Class Outlines
@@ -64,3 +67,15 @@
 - How to configure route parameters
 - How to pass dynamic parameters through links
 - How to programmatically edit our book links
+
+---
+
+### Angular 5: Observables
+
+- What Asynchronous code is
+- What an Observable is
+- How to subscribe to Observables
+- What RxJS Operators are
+- How to map over code
+- The basics of Pipes
+- What a Subject is in Angular
