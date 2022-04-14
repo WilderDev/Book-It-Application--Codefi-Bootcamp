@@ -1,12 +1,13 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Book } from '../shared/book/book.model';
 
 @Injectable({
   providedIn: 'root', // Provide in root of application
 })
 export class BookshelfService {
-  selectedBook = new EventEmitter();
-  bookshelfBooksChanged = new EventEmitter();
+  bookshelfBooksChanged = new Subject<Book[]>();
+  saveBookSubject = new Subject<Book>();
 
   private myBookshelfBooks: Book[] = [
     new Book(
@@ -32,7 +33,7 @@ export class BookshelfService {
   // Create
   saveBookToBookshelf(book: Book) {
     this.myBookshelfBooks.push(book);
-    this.bookshelfBooksChanged.emit(this.myBookshelfBooks.slice());
+    this.bookshelfBooksChanged.next(this.myBookshelfBooks.slice());
   }
 
   // Read All
@@ -50,6 +51,6 @@ export class BookshelfService {
     if (idx === -1) return; // If the myBookshelfBooks doesn't have a book at the index passed in => return
 
     this.myBookshelfBooks.splice(idx, 1);
-    this.bookshelfBooksChanged.emit(this.myBookshelfBooks.slice());
+    this.bookshelfBooksChanged.next(this.myBookshelfBooks.slice());
   }
 }
