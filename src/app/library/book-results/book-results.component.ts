@@ -24,7 +24,5 @@ export class BookResultsComponent implements OnInit {
   onAddToBookshelf(book: Book) {
     // Saves the book from the library page to the bookshelf page
     this.bookshelfService.saveBookToBookshelf(book);
-    // Sends book data to the saveBook Subject
-    this.bookshelfService.saveBookSubject.next(book);
   }
 }
