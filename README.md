@@ -14,6 +14,7 @@
 
 [Angular Lesson 5: Observables - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-5---observables---final)
 
+[Angular Lesson 6: Forms - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-6---forms---final)
 
 ---
 
