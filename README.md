@@ -79,3 +79,12 @@
 - How to map over code
 - The basics of Pipes
 - What a Subject is in Angular
+
+---
+
+### Angular 6: Forms
+
+- Two ways we can handle forms in Angular Applications
+- The differences between both approaches
+- How to implement a Template Driven Approach
+- How to implement a Reactive Driven Approach
