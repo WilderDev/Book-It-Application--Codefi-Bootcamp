@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class BookListComponent implements OnInit {
   bookshelfBooks: Book[] = [];
+  sortField = 'author';
 
   constructor(
     private bookshelfService: BookshelfService,
@@ -33,5 +34,13 @@ export class BookListComponent implements OnInit {
 
   onAddNewBook() {
     this.router.navigate(['new'], { relativeTo: this.route });
+  }
+
+  onSortBooks() {
+    if (this.sortField === 'author') {
+      this.sortField = 'title';
+    } else {
+      this.sortField = 'author';
+    }
   }
 }
