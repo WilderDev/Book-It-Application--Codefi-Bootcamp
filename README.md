@@ -16,6 +16,8 @@
 
 [Angular Lesson 6: Forms - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-6---forms---final)
 
+[Angular Lesson 7: Edit Book Form & Sort Book Pipe - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-7---edit-form-%26-sort-pipe---final)
+
 ---
 
 ## Class Outlines
@@ -89,3 +91,13 @@
 - The differences between both approaches
 - How to implement a Template Driven Approach
 - How to implement a Reactive Driven Approach
+
+---
+
+### Angular 7: Book Edit Form & Sort Books Pipe
+
+- Template-Driven Forms
+- Form Validation
+- Ternary Operators
+- The Angular Router
+- Advanced Component Logic
