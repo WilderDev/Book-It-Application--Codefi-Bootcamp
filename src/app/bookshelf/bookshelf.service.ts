@@ -45,7 +45,13 @@ export class BookshelfService {
     return this.myBookshelfBooks.slice()[idx];
   }
 
-  // Delete
+  // Update One
+  updateBook(index: number, updatedBookDetails: Book) {
+    this.myBookshelfBooks[index] = updatedBookDetails;
+    this.bookshelfBooksChanged.next(this.myBookshelfBooks.slice());
+  }
+
+  // Delete One
   deleteBookFromBookshelf(idx: number) {
     if (idx === -1) return; // If the myBookshelfBooks doesn't have a book at the index passed in => return
 
