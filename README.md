@@ -18,6 +18,8 @@
 
 [Angular Lesson 7: Edit Book Form & Sort Book Pipe - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-7---edit-form-%26-sort-pipe---final)
 
+[Angular Lesson 8: HTTP & API - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-8---http-api---final)
+
 ---
 
 ## Class Outlines
@@ -101,3 +103,16 @@
 - Ternary Operators
 - The Angular Router
 - Advanced Component Logic
+
+---
+
+### Angular 8: Making HTTP Requests && OpenLibrary API
+
+- The OpenLibrary API
+- How to create a search bar form
+-Sending HTTP Requests to an API
+- Updating our Book Model and saving API results
+- Populating the Library page w/ API results
+- Setup a Firebase Project
+- Use the Angular HttpClientModule
+- Send and receive HTTP Requests
