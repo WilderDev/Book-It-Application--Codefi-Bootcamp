@@ -1,33 +1,48 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../shared/book/book.model';
+import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root', // Provide in the root of our application
 })
 export class LibraryService {
-  private allLibraryResults: Book[] = [
-    new Book(
-      "Harry Potter and the Sorcerer's Stone",
-      'J.K. Rowling',
-      'Fantasy',
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474154022i/3._SY180_.jpg'
-    ),
-    new Book(
-      'Harry Potter and the Chamber of Secrets',
-      'J.K. Rowling',
-      'Fantasy',
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474169725i/15881._SY180_.jpg'
-    ),
-    new Book(
-      'Harry Potter and the Prisoner of Azkaban',
-      'J.K. Rowling',
-      'Fantasy',
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630547330i/5._SY180_.jpg'
-    ),
-  ];
+  apiBooksChanged = new Subject<Book[]>();
+
+  private allLibraryResults: Book[] = [];
+
+  constructor(private http: HttpClient) {}
 
   // Read
   getLibraryBooks() {
     return this.allLibraryResults.slice();
+  }
+
+  onFetchBooks(query: string) {
+    // Turn Search Query into lowercase words with plus sign for spaces
+    const formattedQuery = query.split(' ').join('+').toLowerCase();
+
+    // Send HTTP GET Request to the "openLibrary" api endpoint using the tranformed input query
+    this.http
+      .get(`http://openlibrary.org/search.json?q=${formattedQuery}`)
+      .subscribe((searchResults: any) => {
+        const bestMatches = searchResults.docs.slice(0, 7);
+
+        this.saveBooksToGlobalArray(bestMatches);
+      });
+  }
+
+  saveBooksToGlobalArray(books) {
+    books.map((book) => {
+      const formattedBook = new Book(
+        book.title,
+        book.author_name ? book.author_name[0] : 'unknown',
+        'unknown',
+        'https://tse2.mm.bing.net/th?id=OIP.I6LGwie40Vw4K8gmV52MKwHaLc&pid=Api&P=0&w=300&h=300'
+      );
+      this.allLibraryResults.push(formattedBook);
+    });
+
+    this.apiBooksChanged.next(this.allLibraryResults.slice());
   }
 }

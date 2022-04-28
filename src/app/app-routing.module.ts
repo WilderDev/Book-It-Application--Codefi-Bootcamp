@@ -5,6 +5,7 @@ import { LibraryComponent } from './library/library.component';
 import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
 import { BookDetailsComponent } from './bookshelf/book-details/book-details.component';
 import { BookshelfEditorComponent } from './bookshelf/bookshelf-editor/bookshelf-editor.component';
+import { BookResolverService } from './bookshelf/book-resolver.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/bookshelf', pathMatch: 'full' },
@@ -14,8 +15,16 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: BookshelfHomeComponent },
       { path: 'new', component: BookshelfEditorComponent },
-      { path: ':id', component: BookDetailsComponent },
-      { path: ':id/edit', component: BookshelfEditorComponent },
+      {
+        path: ':id',
+        component: BookDetailsComponent,
+        resolve: [BookResolverService],
+      },
+      {
+        path: ':id/edit',
+        component: BookshelfEditorComponent,
+        resolve: [BookResolverService],
+      },
     ],
   },
   { path: 'library', component: LibraryComponent },
