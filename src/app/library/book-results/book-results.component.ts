@@ -19,6 +19,11 @@ export class BookResultsComponent implements OnInit {
   ngOnInit(): void {
     // Update local "libraryBooks" with global "allLibraryResults" array
     this.libraryBooks = this.libraryService.getLibraryBooks();
+
+    // Subscribe to the Subject that emits when the global "allLibraryResults" array changes
+    this.libraryService.apiBooksChanged.subscribe((updatedBooks: Book[]) => {
+      this.libraryBooks = updatedBooks;
+    });
   }
 
   onAddToBookshelf(book: Book) {
