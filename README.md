@@ -20,6 +20,8 @@
 
 [Angular Lesson 8: HTTP & API - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-8---http-api---final)
 
+[Angular Lesson 9: Authentication & Route Protection - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-9---Authentication---final)
+
 ---
 
 ## Class Outlines
@@ -110,9 +112,20 @@
 
 - The OpenLibrary API
 - How to create a search bar form
--Sending HTTP Requests to an API
+- Sending HTTP Requests to an API
 - Updating our Book Model and saving API results
 - Populating the Library page w/ API results
 - Setup a Firebase Project
 - Use the Angular HttpClientModule
 - Send and receive HTTP Requests
+
+---
+
+### Angular 9: Authentication & Route Protection
+
+- Authenticate users using Firebase
+- Understand the !! operator
+- Work with Refresh Tokens & JWT
+- Create AuthGaurds and use HTTP Interceptors
+- Add Secret Enviornment Variables
+- Implement User Authentication in Angular
