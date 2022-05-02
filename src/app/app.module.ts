@@ -16,7 +16,9 @@ import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-hom
 import { BookshelfEditorComponent } from './bookshelf/bookshelf-editor/bookshelf-editor.component';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { SortBooksPipe } from './shared/pipes/sortBooks.pipe';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     BookshelfEditorComponent,
     DropdownDirective,
     SortBooksPipe,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
