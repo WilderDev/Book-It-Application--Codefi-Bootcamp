@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+
+import { Injectable } from '@angular/core';
+
 import { Book } from '../shared/book/book.model';
 
 @Injectable({
-  providedIn: 'root', // Provide in root of application
+  providedIn: "root" // Provide in root of application
 })
 export class BookshelfService {
   selectedBook = new Subject<Book>();
@@ -14,6 +16,7 @@ export class BookshelfService {
   // CREATE (one)
   saveBookToBookshelf(book: Book) {
     this.myBookshelfBooks.push(book);
+    this.selectedBook.next(book);
     this.bookshelfBooksChanged.next(this.myBookshelfBooks.slice());
   }
 
@@ -43,7 +46,10 @@ export class BookshelfService {
   deleteBookFromBookshelf(idx: number) {
     if (idx === -1) return; // If the myBookshelfBooks doesn't have a book at the index passed in => return
 
+    this.selectedBook.next(this.myBookshelfBooks[idx]);
+
     this.myBookshelfBooks.splice(idx, 1);
+
     this.bookshelfBooksChanged.next(this.myBookshelfBooks.slice());
   }
 }
