@@ -22,6 +22,8 @@
 
 [Angular Lesson 9: Authentication & Route Protection - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-9---Authentication---final)
 
+[Angular Lesson 10: Code-Splitting - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-10---code-splitting)
+
 ---
 
 ## Class Outlines
@@ -129,3 +131,14 @@
 - Create AuthGaurds and use HTTP Interceptors
 - Add Secret Enviornment Variables
 - Implement User Authentication in Angular
+
+---
+
+### Angular 10: Code-Splitting
+
+- What Modules are in Angular
+- How to use Code-Splitting
+- How to utilize Lazy-Loading of Routes & Components
+- How to Preload your Components
+- A new way to load Services
+- About Ahead-of-Time-Compliation
