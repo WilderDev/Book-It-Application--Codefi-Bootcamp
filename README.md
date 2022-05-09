@@ -24,6 +24,8 @@
 
 [Angular Lesson 10: Code-Splitting - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-10---code-splitting)
 
+[Angular Lesson 11: Deployment - Final](https://github.com/WilderDev/Book-It-Application--Codefi-Bootcamp/tree/Angular-11---deployment---final)
+
 ---
 
 ## Class Outlines
@@ -142,3 +144,10 @@
 - How to Preload your Components
 - A new way to load Services
 - About Ahead-of-Time-Compliation
+
+---
+
+### Angular 11: Deployment
+
+- How to deploy an Angular Application using Heroku
+- How to setup a deploy when you commit to Github
