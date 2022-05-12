@@ -1,4 +1,4 @@
-<div class="row mb-3" *ngFor="let bookEl of libraryBooks">
+<div class="row mb-3" *ngFor="let bookEl of libraryBooks" [@swoopIn]>
   <div class="col-md-12">
     <app-book [book]="bookEl"></app-book>
     <button
